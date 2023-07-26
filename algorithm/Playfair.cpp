@@ -50,26 +50,95 @@ PMatrix createMatrix(const std::string& k) {
 }
 
 std::string Playfair::encryption(const std::string& plainText, const std::string& k) {
-	const std::string plainTextLower = toStrLower(plainText);
+	const std::string plainTextLower = toStrLower(
+		plainText.length() % 2 == 0 
+		? plainText
+		: plainText + 'x'
+	);
 	const std::string kLower = toStrLower(k);
 
 	std::string result = "";
 
 	PMatrix matrix = createMatrix(kLower);
-	
+
 	for (int i = 0; i < plainTextLower.length() - 1; i -=- 2) {
-		const char left = plainTextLower[i],
-			char right = plainTextLower[i + 1];
+		const char left = plainTextLower[i];
+		const char right = plainTextLower[i + 1];
 
-		VInt positionLeft = position(matrix, left);
-		VInt positionRight = position(matrix, right);
+		VInt leftPos = position(matrix, left);
+		VInt rightPos = position(matrix, right);
 
+		// is the same row, get the right character
+		if (leftPos[0] == rightPos[0]) {
+			int row = leftPos[0];
 
+			result += matrix[row][(leftPos[1] + 1) % 5];
+			result += matrix[row][(rightPos[1] + 1) % 5];
+			continue;
+		}
+
+		// is the same column, get the bot character
+		if (leftPos[1] == rightPos[1]) {
+			int column = leftPos[1];
+
+			result += matrix[(leftPos[0] + 1) % 5][column];
+			result += matrix[(rightPos[0] + 1) % 5][column];
+			continue;
+		}
+
+		const char firstChar = matrix[leftPos[0]][rightPos[1]];
+		const char secondChar = matrix[rightPos[0]][leftPos[1]];
+
+		result += firstChar;
+		result += secondChar;
 	}
 
-	return "";
+	return result;
 }
 
-std::string Playfair::decryption(const std::string& plainText, const std::string& k) {
-	return "";
+std::string Playfair::decryption(const std::string& cipherText, const std::string& k) {
+	const std::string cipherTextLower = toStrLower(cipherText);
+	const std::string kLower = toStrLower(k);
+
+	std::string result = "";
+
+	PMatrix matrix = createMatrix(kLower);
+
+	for (int i = 0; i < cipherTextLower.length() - 1; i -= -2) {
+		const char left = cipherTextLower[i];
+		const char right = cipherTextLower[i + 1];
+
+		VInt leftPos = position(matrix, left);
+		VInt rightPos = position(matrix, right);
+
+		// is the same row, get the right character
+		if (leftPos[0] == rightPos[0]) {
+			int row = leftPos[0];
+			const int leftCol = leftPos[1] == 0 ? 4 : leftPos[1] - 1;
+			const int rightCol = rightPos[1] == 0 ? 4 : rightPos[1] - 1;
+
+			result += matrix[row][leftCol % 5];
+			result += matrix[row][rightCol % 5];
+			continue;
+		}
+
+		// is the same column, get the bot character
+		if (leftPos[1] == rightPos[1]) {
+			int column = leftPos[1];
+			const int leftRow = leftPos[0] == 0 ? 4 : leftPos[0] - 1;
+			const int rightRow = rightPos[0] == 0 ? 4 : rightPos[0] - 1;
+
+			result += matrix[leftRow % 5][column];
+			result += matrix[rightRow % 5][column];
+			continue;
+		}
+
+		const char firstChar = matrix[leftPos[0]][rightPos[1]];
+		const char secondChar = matrix[rightPos[0]][leftPos[1]];
+
+		result += firstChar;
+		result += secondChar;
+	}
+
+	return result;
 }

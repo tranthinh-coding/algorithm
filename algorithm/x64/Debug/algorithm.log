@@ -1,2 +1,10 @@
-﻿  Playfair.cpp
+﻿  Vingenere.cpp
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(7,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(7,32): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(8,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(8,43): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(23,32): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(23,32): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(24,44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\algorithm\Vingenere.cpp(24,44): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
   algorithm.vcxproj -> C:\Users\Admin\Desktop\Study\nam4-ki1\an-toan-thong-tin\algorithm\x64\Debug\algorithm.exe

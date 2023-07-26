@@ -11,9 +11,9 @@ extern const VChar CHARACTER_LOWER_MAP;
 
 extern const VChar CHARACTER_UPPER_MAP;
 
-extern char getBase(const char&);
+extern char getBase(const char& c);
 
-extern std::string toStrLower(const std::string&);
+extern std::string toStrLower(const std::string& str);
 
-extern std::string toStrUpper(const std::string&);
+extern std::string toStrUpper(const std::string& str);
 #endif

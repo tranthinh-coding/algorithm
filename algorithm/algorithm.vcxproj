@@ -131,11 +131,13 @@
     <ClCompile Include="Caesar.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Playfair.cpp" />
+    <ClCompile Include="Vingenere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Caesar.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Playfair.h" />
+    <ClInclude Include="Vingenere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

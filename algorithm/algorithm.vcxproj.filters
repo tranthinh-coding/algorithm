@@ -24,12 +24,24 @@
     <ClCompile Include="Global.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Playfair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vingenere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Caesar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Playfair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vingenere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
